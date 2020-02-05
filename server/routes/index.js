@@ -28,5 +28,7 @@ module.exports = (app) => {
     		{},
     		{messageList:1}
     		)
+
+    	res.send(result);
     })
 }
