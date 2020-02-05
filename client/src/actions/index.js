@@ -10,6 +10,16 @@ export const MessageSent = (message) => async (dispatch) => {
 	})
 }
 
+
+export const GetMessages = () => async (dispatch) => {
+
+	const response = await server.get('/getMessages')
+
+	dispatch({
+		type:'GET_MESSAGES',
+		payload: response.data
+	})
+}
 // export const MessageSent = (message) => {
 // 	return {
 // 		type:'MESSAGE_HIT',

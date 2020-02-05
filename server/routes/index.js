@@ -23,12 +23,15 @@ module.exports = (app) => {
     })
 
 
-    app.post('/getMessages', async (req, res) => {
+    app.get('/getMessages', async (req, res) => {
+
+    	console.log("requested URL", req.url);
     	let result = await Message.find(
     		{},
     		{messageList:1}
     		)
 
+    	console.log("message list", result);
     	res.send(result);
     })
 }
