@@ -12,7 +12,13 @@ class MessageInput extends React.Component{
 		e.preventDefault()
 		// alert('submitted');
 		console.log(MessageSent);
-		this.props.MessageSent({message:"jello"})
+		this.props.MessageSent({message:this.state.newMessage})
+
+		this.props.onNewMessage({message:this.state.newMessage});
+
+		this.setState({
+			newMessage:''
+		})
 	}
 
 	onInputChange = (e) => {

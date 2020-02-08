@@ -7,17 +7,27 @@ class MessageList extends React.Component{
 
 	state = {messageList:[]};
 	componentDidMount(){
-		let result = this.props.getMessage();
-		this.setState({
-			messageList:result
-		})
-	}	
+		this.result = this.props.getMessage();
+
+		// console.log("here are the results===>>", result);		
+	}
+
+	// componentWillUpdate(){
+	// 	this.setState({
+	// 		messageList:this.result
+	// 	})
+	// }	
 
 	renderList(){
 		console.log("here state", this.state.messageList)
-		return this.state.messageList.map((item) => {
+
+		// if (true) {
+		// 	return <div>Loading...</div>
+		// }
+		return this.props.messages.map((item) => {
 			return <div>{item.message}</div>
 		})
+
 	}
 
 	render(){
